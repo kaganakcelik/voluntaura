@@ -1,5 +1,5 @@
 import { NavLink as RouterNavLink, useLocation } from 'react-router-dom';
- import { Map, Heart, List, User, Info } from 'lucide-react';
+import { Map, Heart, List, User, Info } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import {
   DropdownMenu,
@@ -12,10 +12,10 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const navItems = [
-   { to: '/discover', icon: Map, label: 'Discover' },
+  { to: '/discover', icon: Map, label: 'Discover' },
   { to: '/swipe', icon: Heart, label: 'Match' },
   { to: '/list', icon: List, label: 'My List' },
-   { to: '/reference', icon: Info, label: 'Reference' },
+  { to: '/reference', icon: Info, label: 'Reference' },
 ];
 
 export function Navigation() {
@@ -61,7 +61,7 @@ export function Navigation() {
             <DropdownMenuTrigger asChild>
               <button className="flex items-center gap-2 p-1.5 rounded-full hover:bg-secondary transition-colors">
                 <Avatar className="w-8 h-8">
-                  <AvatarImage src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" />
+                  <AvatarImage src="https://upload.wikimedia.org/wikipedia/commons/9/91/Bill_Gates_1977.png" />
                   <AvatarFallback className="bg-primary text-primary-foreground text-sm">
                     JD
                   </AvatarFallback>
@@ -104,7 +104,7 @@ export function Navigation() {
               </RouterNavLink>
             );
           })}
-          
+
           {/* Mobile User Avatar */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>

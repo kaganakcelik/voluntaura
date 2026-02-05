@@ -1,0 +1,327 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Voluntaura Design System - Nature-inspired volunteer discovery */
+
+@layer base {
+  :root {
+    --background: 150 20% 98%;
+    --foreground: 160 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 160 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 25% 15%;
+
+    --primary: 168 76% 36%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 150 30% 94%;
+    --secondary-foreground: 160 25% 25%;
+
+    --muted: 150 15% 92%;
+    --muted-foreground: 160 10% 45%;
+
+    --accent: 16 85% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 150 20% 88%;
+    --input: 150 20% 88%;
+    --ring: 168 76% 36%;
+
+    --radius: 0.75rem;
+
+    /* Custom Voluntaura tokens */
+    --teal-50: 166 76% 97%;
+    --teal-100: 167 76% 92%;
+    --teal-200: 168 75% 84%;
+    --teal-500: 168 76% 36%;
+    --teal-600: 169 80% 30%;
+    --teal-700: 170 80% 24%;
+
+    --sage-50: 140 30% 96%;
+    --sage-100: 140 25% 90%;
+    --sage-200: 140 20% 82%;
+
+    --coral: 16 85% 60%;
+    --coral-dark: 16 85% 50%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(168 76% 36%) 0%, hsl(142 76% 36%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(150 20% 98%) 100%);
+    --gradient-swipe-match: linear-gradient(135deg, hsl(340 80% 55%) 0%, hsl(16 85% 60%) 100%);
+    --gradient-swipe-pass: linear-gradient(135deg, hsl(0 0% 70%) 0%, hsl(0 0% 50%) 100%);
+
+    --shadow-soft: 0 2px 8px -2px hsl(160 25% 15% / 0.08), 0 4px 16px -4px hsl(160 25% 15% / 0.12);
+    --shadow-card: 0 4px 12px -4px hsl(160 25% 15% / 0.1), 0 8px 24px -8px hsl(160 25% 15% / 0.15);
+    --shadow-elevated: 0 8px 24px -8px hsl(160 25% 15% / 0.15), 0 16px 48px -16px hsl(160 25% 15% / 0.2);
+    --shadow-glow: 0 0 24px -4px hsl(168 76% 36% / 0.4);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 168 76% 36%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 150 30% 94%;
+    --sidebar-accent-foreground: 160 25% 25%;
+    --sidebar-border: 150 20% 88%;
+    --sidebar-ring: 168 76% 36%;
+  }
+
+  .dark {
+    --background: 160 20% 8%;
+    --foreground: 150 15% 95%;
+
+    --card: 160 18% 12%;
+    --card-foreground: 150 15% 95%;
+
+    --popover: 160 18% 12%;
+    --popover-foreground: 150 15% 95%;
+
+    --primary: 168 70% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 160 15% 18%;
+    --secondary-foreground: 150 15% 90%;
+
+    --muted: 160 12% 20%;
+    --muted-foreground: 150 10% 60%;
+
+    --accent: 16 80% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 160 15% 22%;
+    --input: 160 15% 22%;
+    --ring: 168 70% 45%;
+
+    --sidebar-background: 160 20% 10%;
+    --sidebar-foreground: 150 15% 90%;
+    --sidebar-primary: 168 70% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 160 15% 18%;
+    --sidebar-accent-foreground: 150 15% 90%;
+    --sidebar-border: 160 15% 22%;
+    --sidebar-ring: 168 70% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .card-elevated {
+    @apply bg-card rounded-xl border shadow-[var(--shadow-card)] transition-all duration-300;
+  }
+
+  .card-elevated:hover {
+    @apply shadow-[var(--shadow-elevated)] -translate-y-0.5;
+  }
+
+  .card-interactive {
+    @apply card-elevated cursor-pointer;
+  }
+
+  .btn-primary-glow {
+    @apply bg-primary text-primary-foreground shadow-[var(--shadow-glow)] hover:shadow-[var(--shadow-elevated)];
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .cause-badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-1 text-xs font-medium rounded-full transition-colors;
+  }
+
+  .cause-badge-environment {
+    @apply bg-emerald-100 text-emerald-700;
+  }
+
+  .cause-badge-education {
+    @apply bg-blue-100 text-blue-700;
+  }
+
+  .cause-badge-animals {
+    @apply bg-amber-100 text-amber-700;
+  }
+
+  .cause-badge-health {
+    @apply bg-rose-100 text-rose-700;
+  }
+
+  .cause-badge-food {
+    @apply bg-orange-100 text-orange-700;
+  }
+
+  .cause-badge-community {
+    @apply bg-purple-100 text-purple-700;
+  }
+
+  .swipe-card {
+    @apply absolute inset-0 rounded-2xl overflow-hidden shadow-[var(--shadow-elevated)] transition-transform;
+  }
+
+  .filter-chip {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-full border transition-all duration-200 cursor-pointer select-none;
+  }
+
+  .filter-chip-inactive {
+    @apply bg-background border-border text-muted-foreground hover:bg-secondary hover:border-primary/30;
+  }
+
+  .filter-chip-active {
+    @apply bg-primary text-primary-foreground border-primary shadow-sm;
+  }
+
+  .map-pin {
+    @apply w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg cursor-pointer transition-transform hover:scale-110;
+  }
+
+  .nav-item {
+    @apply flex flex-col items-center gap-1 px-4 py-2 text-sm font-medium text-muted-foreground rounded-lg transition-colors hover:text-foreground hover:bg-secondary;
+  }
+
+  .nav-item-active {
+    @apply text-primary bg-primary/10;
+  }
+
+  .progress-bar {
+    @apply h-2 rounded-full bg-secondary overflow-hidden;
+  }
+
+  .progress-bar-fill {
+    @apply h-full rounded-full gradient-hero transition-all duration-500 ease-out;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-bounce-subtle {
+    animation: bounce-subtle 2s ease-in-out infinite;
+  }
+
+  @keyframes bounce-subtle {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 24px -4px hsl(168 76% 36% / 0.4);
+    }
+    50% {
+      box-shadow: 0 0 32px -2px hsl(168 76% 36% / 0.6);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-8px) rotate(1deg);
+    }
+  }
+
+  .animate-confetti {
+    animation: confetti 0.8s ease-out forwards;
+  }
+
+  @keyframes confetti {
+    0% {
+      transform: translateY(0) scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100px) scale(1);
+      opacity: 0;
+    }
+  }
+
+  .animate-card-enter {
+    animation: card-enter 0.4s ease-out forwards;
+  }
+
+  @keyframes card-enter {
+    0% {
+      transform: scale(0.9) translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.3s ease-out forwards;
+  }
+
+  @keyframes slide-up {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-match-celebration {
+    animation: match-celebration 0.6s ease-out forwards;
+  }
+
+  @keyframes match-celebration {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}

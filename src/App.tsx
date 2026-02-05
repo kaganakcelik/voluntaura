@@ -4,12 +4,17 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
- import LandingPage from "./pages/Landing";
+import LandingPage from "./pages/Landing";
 import MapDiscoverPage from "./pages/MapDiscover";
 import SwipeMatchPage from "./pages/SwipeMatch";
 import MyVolunteeringPage from "./pages/MyVolunteering";
- import NotFound from "./pages/NotFound";
- import ReferencePage from "./pages/Reference";
+import NotFound from "./pages/NotFound";
+import ReferencePage from "./pages/Reference";
+
+const DocumentationRedirect = () => {
+  window.location.replace("/documentation.pdf");
+  return null;
+};
 
 const queryClient = new QueryClient();
 
@@ -22,11 +27,12 @@ const App = () => (
         <div className="min-h-screen bg-background">
           <Navigation />
           <Routes>
-           <Route path="/" element={<LandingPage />} />
-           <Route path="/discover" element={<MapDiscoverPage />} />
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/discover" element={<MapDiscoverPage />} />
             <Route path="/swipe" element={<SwipeMatchPage />} />
             <Route path="/list" element={<MyVolunteeringPage />} />
-           <Route path="/reference" element={<ReferencePage />} />
+            <Route path="/reference" element={<ReferencePage />} />
+            <Route path="/documentation" element={<DocumentationRedirect />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

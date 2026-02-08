@@ -10,6 +10,7 @@ import SwipeMatchPage from "./pages/SwipeMatch";
 import MyVolunteeringPage from "./pages/MyVolunteering";
 import NotFound from "./pages/NotFound";
 import ReferencePage from "./pages/Reference";
+import CommunityPage from "./pages/Community";
 
 const DocumentationRedirect = () => {
   window.location.replace("/documentation.pdf");
@@ -31,6 +32,7 @@ const App = () => (
             <Route path="/discover" element={<MapDiscoverPage />} />
             <Route path="/swipe" element={<SwipeMatchPage />} />
             <Route path="/list" element={<MyVolunteeringPage />} />
+            <Route path="/community" element={<CommunityPage />} />
             <Route path="/reference" element={<ReferencePage />} />
             <Route path="/documentation" element={<DocumentationRedirect />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

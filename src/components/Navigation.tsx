@@ -1,5 +1,5 @@
 import { NavLink as RouterNavLink, useLocation } from 'react-router-dom';
-import { Map, Heart, List, User, Info } from 'lucide-react';
+import { Map, Heart, List, User, Users, Info } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import {
   DropdownMenu,
@@ -15,6 +15,7 @@ const navItems = [
   { to: '/discover', icon: Map, label: 'Discover' },
   { to: '/swipe', icon: Heart, label: 'Match' },
   { to: '/list', icon: List, label: 'My List' },
+  { to: '/community', icon: Users, label: 'Community' },
   { to: '/reference', icon: Info, label: 'Reference' },
 ];
 

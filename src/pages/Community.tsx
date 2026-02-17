@@ -62,12 +62,12 @@ export default function CommunityPage() {
             {/* Feedback Section */}
             <Card className="card-elevated border-none bg-gradient-to-br from-card to-secondary/20 shadow-xl overflow-hidden relative">
                 <div className="absolute top-0 right-0 p-8 opacity-5">
-                    <MessageSquare className="w-32 h-32" />
+                    {/* <MessageSquare className="w-32 h-32" /> */}
                 </div>
                 <CardHeader className="relative px-8 pt-8">
-                    <CardTitle className="text-2xl">Feedback</CardTitle>
+                    <CardTitle className="text-2xl">Suggest New Opportunities</CardTitle>
                     <CardDescription className="text-base">
-                        Tell us about your experience or suggest new features. We'd love to hear from you!
+                        Suggest new volunteer opportunities or resources to add to the website. We'd love to hear from you!
                     </CardDescription>
                 </CardHeader>
                 <CardContent className="p-8 relative">
